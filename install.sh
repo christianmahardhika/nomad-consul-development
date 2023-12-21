@@ -52,3 +52,28 @@ else
     echo "Consul is not installed"
 fi
 
+# Download Vault Linux
+sudo apt install vault
+
+## set time to sleep 1 second
+sleep 1
+
+# Verify vault installation
+vault -v && \
+if [ $? -eq 0 ]; then
+    echo "Vault is installed"
+else
+    echo "Vault is not installed"
+fi
+
+# start consul agent in dev mode to connect to nomad in background
+consul agent -config-dir=./consul -dev &
+
+## set time to sleep 1 second
+sleep 1
+
+# Start vault server in dev mode in background
+vault server -dev &
+
+# run nomad agent to connect to consul
+nomad agent -config nomad/config.hcl -dev &
