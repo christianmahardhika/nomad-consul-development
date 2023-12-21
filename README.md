@@ -1,4 +1,4 @@
-# Nomad Consul Development
+# Nomad Consul Vault Development
 
 ## Background
 
@@ -9,19 +9,19 @@ Developing on a local environment and a cloud environment can often be a challen
 Hashicorp Nomad is a cluster manager and scheduler that allows us to deploy applications and services on a cluster of machines. It is a lightweight and flexible tool that can be used to deploy containerized and non-containerized applications. It is also cloud-agnostic, which means that it can be used to deploy applications on any cloud provider or on-premise data center. Nomad is also highly available and fault-tolerant, which means that it can tolerate failures and continue to operate without any downtime. It also supports multi-datacenter deployments, which means that we can deploy applications across multiple data centers and regions.
 
 <!-- insert nomad logo -->
-![Nomad Logo](https://www.nomadproject.io/assets/images/logo_hashicorp_nomad_full_color-8c8e9d9e.png)
+![Nomad Logo](https://cdn.freebiesupply.com/logos/large/2x/nomad-2-logo-png-transparent.png)
 
 
 
 Hashicorp Consul is a service mesh that provides service discovery, configuration, and segmentation functionality. It is a distributed system that can be used to connect and secure services across any runtime platform and public or private cloud. Consul is also highly available and fault-tolerant, which means that it can tolerate failures and continue to operate without any downtime. It also supports multi-datacenter deployments, which means that we can deploy applications across multiple data centers and regions.
 
 <!-- insert consul logo -->
-![Consul Logo](https://www.consul.io/img/logo-2.png)
+![Consul Logo](https://www.vectorlogo.zone/logos/consulio/consulio-ar21.png)
 
 Hashicorp Vault is a secrets management tool that allows us to store and access sensitive data such as passwords, API keys, and certificates. It is a distributed system that can be used to secure, store, and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI, CLI, or HTTP API. Vault is also highly available and fault-tolerant, which means that it can tolerate failures and continue to operate without any downtime. It also supports multi-datacenter deployments, which means that we can deploy applications across multiple data centers and regions.
 
 <!-- insert vault logo -->
-![Vault Logo](https://www.vaultproject.io/img/vault_logo_green.png)
+![Vault Logo](https://www.vectorlogo.zone/logos/vaultproject/vaultproject-ar21.png)
 
 ## Developing with nomad, consul and vault
 
@@ -172,3 +172,18 @@ To run the cluster, we need to run the following commands:
 
 ## Result
 
+Consul is up and running locally, and Nomad has been successfully integrated. The configuration files provided in the code snippets demonstrate the setup of both Consul and Nomad. Consul is configured with the datacenter set to "dc1" and the server mode enabled. Nomad is configured to join the Consul cluster using the local provider and specified Consul servers. With these configurations in place, Consul and Nomad are ready to work together seamlessly.
+
+Nomad is up and running locally, as indicated by the successful execution of the ./install.sh command. The configuration options provided in the code snippets ensure that Nomad is integrated with Consul and Vault, allowing for seamless coordination and management of distributed applications
+
+Vault is up and running locally with the backend successfully connected to Consul. This integration allows Vault to securely store and manage secrets. To access the Vault UI, you can use the root token generated below using the CLI command. The Vault UI provides a user-friendly interface to interact with Vault and manage secrets effectively.
+
+## Conclusion
+
+In this article, we have explored how Nomad, Consul, and Vault can be seamlessly integrated to facilitate development in a local environment. We have also discussed the benefits of using these tools together and how they can be leveraged to ensure a seamless transition when deploying code to the cloud environment. With Nomad, Consul, and Vault, developers can confidently develop and test their applications locally, knowing that they will run smoothly in the cloud.
+
+## References
+
+- [Hashicorp Nomad](https://www.nomadproject.io/)
+- [Hashicorp Consul](https://www.consul.io/)
+- [Hashicorp Vault](https://www.vaultproject.io/)
