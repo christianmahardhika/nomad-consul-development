@@ -49,6 +49,14 @@ sudo apt-get install nomad
 
 Post installation, we must instal the CNI plugins and enable the bridge-nf-call-iptables kernel module. This is required for Nomad to properly configure the network for containers.
 
+explain:
+
+The selected text from the `README.md` file is providing instructions for post-installation steps required for Nomad, a workload orchestrator, to properly configure the network for containers.
+
+Firstly, it mentions the need to install the Container Network Interface (CNI) plugins. CNI is a standard that defines how network interfaces for Linux containers should be configured and managed. CNI plugins are used by container runtimes, like Docker and Podman, to set up networking for containers. They allow different networking solutions to be used with containers and are crucial for enabling communication between containers, and between containers and the outside world.
+
+Secondly, the text instructs to enable the `bridge-nf-call-iptables` kernel module. This is a Linux kernel option that allows iptables rules to be applied to traffic coming in and out of a network bridge, such as the one Docker uses to connect containers to the host system. Enabling this option is necessary for certain network operations, like Network Address Translation (NAT), to work correctly with containers. This is particularly important for orchestrators like Nomad, which need to manage and route network traffic for containers efficiently and securely.
+
 ```bash
 # Post installation
 curl -L -o cni-plugins.tgz "https://github.com/containernetworking/plugins/releases/download/v1.0.0/cni-plugins-linux-$( [ $(uname -m) = aarch64 ] && echo arm64 || echo amd64)"-v1.0.0.tgz && \
