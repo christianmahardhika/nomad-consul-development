@@ -67,7 +67,7 @@ else
 fi
 
 # start consul agent in dev mode to connect to nomad in background
-consul agent -config-dir=./consul -dev &
+consul agent -config-dir=./consul -client 0.0.0.0 -dev &
 
 ## set time to sleep 1 second
 sleep 1
