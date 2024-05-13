@@ -3,7 +3,6 @@ data_dir = "./consul/tmp/data"
 log_level = "DEBUG"
 
 client_addr = "0.0.0.0"
-bind_addr = "0.0.0.0"
 
 server = true
 
